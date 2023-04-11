@@ -48,4 +48,7 @@ form.onsubmit = function(e) {
         poster.alt = data.Title
         showDiv.appendChild(poster)
     })
+    .catch(function(err){
+        showDiv.innerHTML = err.message
+    })
 }
