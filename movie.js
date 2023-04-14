@@ -1,56 +1,58 @@
-var MovieDiv = document.getElementById('movie')
-var form = document.querySelector('form')
-var URL =
+var MovieDiv = document.getElementById('movie');
+var form = document.querySelector('form');
+var URL = "";
 
 form.onsubmit = function(e) {
-  e.preventDefault()
-  var searchTerm = this.movie-title.value
-  if (!searchTerm) return
-  form.movie-title.value = ""
-  fetch(" http://www.omdbapi.com/?t=" + searchTerm + "&type=series&apikey=4975ce62")
+  e.preventDefault();
+  var searchTerm = this.movie-title.value;
+  if (!searchTerm) return;
+  form.movie-title.value = "";
+  
+  fetch("http://www.omdbapi.com/?t=" + searchTerm + "&type=series&apikey=4975ce62")
   .then(function(res) {
       if(res.status !== 200){
-          throw new Error('Show not found')
+          throw new Error('Show not found');
       }
-      return res.json()
+      return res.json();
   })
   .then(function(data) {
-    console.log(data)
-    MovieDiv.innerHTML = ""
-    var h2 = document.createElement('h2')
-    h2.textContent = data.Title
-    MovieDiv.appendChild(h2)
+    console.log(data);
+    MovieDiv.innerHTML = "";
     
-    var Year = document.createElement('p')
-    Year.textContent = "Released: " + data.Year
-    MovieDiv.appendChild(Year)
+    var h2 = document.createElement('h2');
+    h2.textContent = data.Title;
+    MovieDiv.appendChild(h2);
+    
+    var Year = document.createElement('p');
+    Year.textContent = "Released: " + data.Year;
+    MovieDiv.appendChild(Year);
 
-    var Rating = document.createElement('p')
-    Rating.textContent = "Rating: " + data.Rating
-    MovieDiv.appendChild(Rating)
+    var Rating = document.createElement('p');
+    Rating.textContent = "Rating: " + data.imdbRating;
+    MovieDiv.appendChild(Rating);
 
-    var Genre = document.createElement('p')
-    Genre.textContent = "Genre: " + data.Genre
-    MovieDiv.appendChild(Genre)
+    var Genre = document.createElement('p');
+    Genre.textContent = "Genre: " + data.Genre;
+    MovieDiv.appendChild(Genre);
 
-    var Director = document.createElement('p')
-    Director.textContent = "Director: " + data.Director
-    MovieDiv.appendChild(Director)
+    var Director = document.createElement('p');
+    Director.textContent = "Director: " + data.Director;
+    MovieDiv.appendChild(Director);
 
-    var Actors = document.createElement('p')
-    Actors.textContent = "Actors: " + data.Actors
-    MovieDiv.appendChild(Actors)
+    var Actors = document.createElement('p');
+    Actors.textContent = "Actors: " + data.Actors;
+    MovieDiv.appendChild(Actors);
 
-    var Plot = document.createElement('p')
-    Plot.textContent = "Plot: " + data.Plot
-    MovieDiv.appendChild(Plot)
+    var Plot = document.createElement('p');
+    Plot.textContent = "Plot: " + data.Plot;
+    MovieDiv.appendChild(Plot);
 
-    var poster = document.createElement('img')
-    poster.src = data.Poster
-    poster.alt = data.Title
-    MovieDiv.appendChild(poster)
-})
-.catch(function(err){
-    MovieDiv.innerHTML = err.message
-})
-}
+    var poster = document.createElement('img');
+    poster.src = data.Poster;
+    poster.alt = data.Title;
+    MovieDiv.appendChild(poster);
+  })
+  .catch(function(err){
+    MovieDiv.innerHTML = err.message;
+  });
+};
