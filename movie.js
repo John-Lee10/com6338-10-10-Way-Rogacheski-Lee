@@ -4,11 +4,11 @@ var URL = "";
 
 form.onsubmit = function(e) {
   e.preventDefault();
-  var searchTerm = this.movie-title.value;
+  var searchTerm = this.movieTitle.value;
   if (!searchTerm) return;
-  form.movie-title.value = "";
+  form.movieTitle.value = "";
   
-  fetch("http://www.omdbapi.com/?t=" + searchTerm + "&type=series&apikey=4975ce62")
+  fetch("http://www.omdbapi.com/?t=" + searchTerm + "&type=movie&apikey=4975ce62")
   .then(function(res) {
       if(res.status !== 200){
           throw new Error('Show not found');
