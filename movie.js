@@ -8,7 +8,7 @@ $(document).ready(function() {
         url: 'https://www.omdbapi.com/',
         type: 'GET',
         data: {
-          apikey: '',
+          apikey: '4975ce62',
           t: movieTitle
         },
         success: function(response) {
