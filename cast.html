@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Movie Search</title>
-  <link rel="Stylesheet" type="text/css" href="stylesheet.css"/>
+	<title>Actor Information</title>
+    <link rel="Stylesheet" type="text/css" href="stylesheet.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -19,17 +19,15 @@
           </div>
         </div>
       </nav>
-    <h1>Movie Junkie</h1>
+	<h1>Cast Information</h1>
+	<form>
+		<label for="actorname">Actor Name:</label>
+		<input type="text" id="actorname" name="actorname"><br><br>
+		<button type="submit">Search</button>
+	</form>
 
-     <form>
-        <label for="movieTitle">Search a Movie:</label>
-        <input type="text" id="movieTitle" name="movieTitle" required>
+	<div id="actorinfo"></div>
 
-        <button type="submit">Search</button>
-     </form>
-
-  <div id="movie"></div>
-  
-  <script src="movie.js"></script>
+	<script src="cast.js"></script>
 </body>
 </html>
