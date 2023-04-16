@@ -8,7 +8,7 @@ form.onsubmit = function(e) {
   if (!searchTerm) return;
   form.movieTitle.value = "";
   
-  fetch("http://www.omdbapi.com/?t=" + searchTerm + "&type=movie&apikey=4975ce62")
+  fetch("https://www.omdbapi.com/?t=" + searchTerm + "&type=movie&apikey=4975ce62")
   .then(function(res) {
       if(res.status !== 200){
           throw new Error('Movie not found');

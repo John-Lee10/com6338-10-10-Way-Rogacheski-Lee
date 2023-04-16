@@ -8,7 +8,7 @@ form.onsubmit = function(e) {
     var searchTerm = this.showName.value
     if (!searchTerm) return
     form.showName.value = ""
-    fetch(" http://www.omdbapi.com/?t=" + searchTerm + "&type=series&apikey=3045859d")
+    fetch(" https://www.omdbapi.com/?t=" + searchTerm + "&type=series&apikey=3045859d")
     .then(function(res) {
         if(res.status !== 200){
             throw new Error('Show not found')
