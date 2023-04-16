@@ -11,7 +11,7 @@ form.onsubmit = function(e) {
   fetch("http://www.omdbapi.com/?t=" + searchTerm + "&type=movie&apikey=4975ce62")
   .then(function(res) {
       if(res.status !== 200){
-          throw new Error('Show not found');
+          throw new Error('Movie not found');
       }
       return res.json();
   })
