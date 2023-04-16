@@ -4,6 +4,7 @@ body {
     margin: auto;
     width: 80%;
     text-align: center;
+    padding-bottom: 50px;
   }
 
   nav ul {
@@ -14,8 +15,8 @@ body {
     display: inline-block;
     padding:50px;
     padding-bottom: 50px;
-    padding-right: 75px;
-    padding-left: 75px;
+    padding-right: 100px;
+    padding-left: 100px;
   }
   
   nav a {
