@@ -2,8 +2,9 @@ body {
     background-color: #e7dfd8;
     color: #000000;
     margin: auto;
-    width: max-content;
+    width: 80%;
     text-align: center;
+    padding-bottom: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
@@ -13,10 +14,10 @@ body {
   
   nav li {
     display: inline-block;
-    padding-top:50px;
+    padding:50px;
     padding-bottom: 50px;
-    padding-right: 150px;
-    padding-left: 150px;
+    padding-right: 100px;
+    padding-left: 100px;
   }
   
   nav a {
