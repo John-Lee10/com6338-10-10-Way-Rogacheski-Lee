@@ -4,8 +4,10 @@ body {
     margin: auto;
     width: 80%;
     text-align: center;
-    padding-bottom: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   nav ul {
@@ -31,9 +33,22 @@ body {
     font-size: 56px;
   }
 
+  main {
+    flex: 1;
+    padding: 20px;
+  }
+
   button{
     background-color: red;
     color: white;
+  }
+
+  footer {
+    padding: 20px;
+    display: inline-block;
+    width: 100%;
+    margin-top: auto;
+    color: red;
   }
 
     /*main page*/
